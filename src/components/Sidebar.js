@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DeleteConfirmationModal from './DeleteModal';
+
 
 const Sidebar = ({ chats, onSelectChat, onNewChat, onDeleteChat }) => {
 
@@ -10,7 +10,6 @@ const Sidebar = ({ chats, onSelectChat, onNewChat, onDeleteChat }) => {
         <div className="sidebar">
             <button className="new-chat-button" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div className='logo-div'>
-                    {/* <img width={20} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQadzeS41vONIfTEWPgkhrALgZ31RSwdba_AA&s' /> */}
                     <img width={26} height={26} src='https://cdn-icons-png.flaticon.com/128/11865/11865326.png' />
                     <p>New Chat</p>
                 </div>
@@ -24,13 +23,10 @@ const Sidebar = ({ chats, onSelectChat, onNewChat, onDeleteChat }) => {
                     onSelectChat(index)
                 }} key={index} className="chat-item">
 
-                    {/* <span onClick={() => onSelectChat(index)}>{chat?.messages[0]?.
-                        message
-                    }  {chat?.messages[0]?.
-                        message ? "" : 'New Chat'}</span> */}
+
                     <span onClick={() => onSelectChat(index)}>
                         {chat?.messages[0]?.message
-                            ? chat?.messages[0]?.message.split(' ').slice(0, 2).join(' ')
+                            ? chat?.messages[0]?.message?.split(' ').slice(0, 2).join(' ')
                             : 'New Chat'}
                     </span>
 
